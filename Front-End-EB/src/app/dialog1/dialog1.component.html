@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>Add Account Details</h1><br>
+<div mat-dialog-content>
+    <form [formGroup]="accountForm" id="accountForm">
+    <mat-form-field appearance="outline">
+        <mat-label>Account Id</mat-label>
+        <input formControlName="accountId" name="accountId" matInput placeholder="Account Id">
+    </mat-form-field> 
+    <mat-form-field appearance="outline">
+        <mat-label>Account No</mat-label>
+        <input formControlName="accountNo"  name="accountNo"  matInput placeholder="Account No">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Account Type</mat-label>
+        <input formControlName="accountType"  name="accountType"  matInput placeholder="Account Type">
+    </mat-form-field>
+   
+    <mat-form-field appearance="outline">
+        <mat-label>Account Status</mat-label>
+        <input formControlName="accountStatus" name="accountStatus"  matInput placeholder="Account Status">
+    </mat-form-field>
+
+ <div mat-dialog-actions align='end'>
+    <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="insertAccount()" name="insert"> {{actionBtn}}</button>
+    <button mat-raised-button color="warn"  mat-dialog-close>Close</button>    
+</div> 
+
+        <button mat-raised-button type="button" [matDialogClose] = "false">Cancel</button>
+
+</form>

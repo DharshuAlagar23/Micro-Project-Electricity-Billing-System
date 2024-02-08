@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!--  Request me for a signup form or any type of help  -->
+    <div>
+        <mat-toolbar>
+          <span class="title-center">Login</span>
+        </mat-toolbar>
+      </div>
+    <div class="login-form">
+        <form [formGroup]="myform">
+            <table>
+                <th>
+                    <div class="avatar"><i class="material-icons">&#xE7FF;</i></div>
+                    <h4 class="modal-title">LOGIN</h4>
+                </th>
+                <tr>
+                    <div class="form-group">
+
+
+                <tr>
+                    <td><label class="la">Email Id :</label></td>
+                    <td> 
+                            <input type="text" class="form-control" placeholder="Enter Email" aria-label="Name" matInput
+                                formControlName="emailId" >
+                       <br>
+                        <div *ngIf="myform.get('emailId')!.touched && myform.get('emailId')!.invalid">
+                            <div *ngIf="myform.get('emailId')!.hasError('required')">
+                                <font color="red">*Email Id is required</font>
+                            </div>
+                            <div *ngIf="myform.get('emailId')!.hasError('pattern')">
+                                <font color="red">*Invalid EmailId</font>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label class="la">Password :</label></td>
+                    <td>
+                            <input type="password"  class="form-control" placeholder="Enter Password" aria-label="Password" matInput
+                                formControlName="password">
+                      <br>
+                        <div *ngIf="myform.get('password')!.touched && myform.get('password')!.invalid">
+                            <div *ngIf="myform.get('password')!.hasError('required')">
+                                <font color="red">*Password required</font>
+                            </div>
+                            <div *ngIf="myform.get('password')!.hasError('pattern')">
+                                <font color="red">*Invalid Password</font>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <button mat-raised-button color="primary" (click)="login(myform.value)"
+                            (click)="changediv()">Login</button>
+                </tr>
+                <br>
+                </div>
+            </table>
+        </form>
+        <br>
+    
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+
+<!--<div>
+    <mat-toolbar>
+      <span class="title-center">Login</span>
+    </mat-toolbar>
+  </div>
+ 
+ 
+ 
+  <div class="container-fluid">
+    <div class="row">
+  <div class="col" align="center">
+    <br><br>
+    <mat-card class="example-card">
+      <mat-card-content>
+      <form [formGroup]="myform">
+        <table>
+            <tr><td><label class="la">Email Id:</label></td><td> <mat-form-field class="example-full-width">
+            <mat-label>Email Id</mat-label>
+            <input type="text"
+                   placeholder="Enter Email"
+                   aria-label="Name"
+                   matInput
+                  formControlName="emailId">
+          </mat-form-field><br>
+          <div *ngIf="myform.get('emailId')!.touched && myform.get('emailId')!.invalid">
+            <div *ngIf="myform.get('emailId')!.hasError('required')">
+              <font color="red">*Email Id is required</font>
+            </div>
+            <div *ngIf="myform.get('emailId')!.hasError('pattern')">
+              <font color="red">*Invalid EmailId</font>
+            </div>
+          </div></td>
+          </tr>
+ 
+              <tr><td><label class="la">Password :</label></td><td> <mat-form-field class="example-full-width">
+                <mat-label>Password</mat-label>
+                <input type="text"
+                       placeholder="Enter Password"
+                       aria-label="Password"
+                       matInput
+                      formControlName="password">
+              </mat-form-field><br>
+                <div *ngIf="myform.get('password')!.touched && myform.get('password')!.invalid">
+                  <div *ngIf="myform.get('password')!.hasError('required')">
+                    <font color="red">*Password required</font>
+                  </div>
+                  <div *ngIf="myform.get('password')!.hasError('pattern')">
+                    <font color="red">*Invalid Password</font>
+                  </div>
+                </div></td></tr>
+ 
+          <tr><td colspan="2">
+            <button mat-raised-button color="primary" (click)="login(myform.value)" (click)="changediv()">Login</button></tr>
+           <br>
+        </table>
+      </form>
+      </mat-card-content>
+      </mat-card>
+     
+  </div>
+  </div>-->

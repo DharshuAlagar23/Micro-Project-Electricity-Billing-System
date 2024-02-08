@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ </head>
+<body>
+<!--  Request me for a signup form or any type of help  -->
+<div>
+    <mat-toolbar>
+      <span class="title-center">Electricity Billing Syste Registration Form!!</span>
+    </mat-toolbar>
+  </div>
+<div class="login-form">    
+    <form #myForm="ngForm" id="ngForm">
+        <table>
+            <th>
+        <div class="avatar"><i class="material-icons">&#xE7FF;</i></div>
+        <h4 class="modal-title">Register Your Account</h4></th>
+        <tr>
+        <div class="form-group">
+
+            <td><input type="text" class="form-control" placeholder="userId"  name="userId" #userId="ngModel" ngModel required></td>
+            <td>
+                <div *ngIf="userId.touched">
+                  <div *ngIf="userId.errors?.['required']">
+                    <font color="red"><b>User Id Required*</b></font>
+                  </div>
+                </div>
+              </td>
+        </div>
+<div class="form-group">
+              <td><input type="text" class="form-control" placeholder="userName"  name="userName" #userName="ngModel" ngModel required></td>
+              <td>
+                  <div *ngIf="userName.touched">
+                    <div *ngIf="userName.errors?.['required']">
+                      <font color="red"><b>User Name Required*</b></font>
+                    </div>
+                  </div>
+                </td>
+            </div>
+            <div class="form-group">
+            <td><input type="text" class="form-control" placeholder="email" name="emailId" #emailId="ngModel" ngModel required></td>
+            <td>
+                <div *ngIf="emailId.touched">
+                  <div *ngIf="emailId.errors?.['required']">
+                    <font color="red"><b>Email Required*</b></font>
+                  </div>
+                </div>
+              </td>
+           
+
+   
+        </div></tr>
+<tr>
+        <div class="form-group">
+            <td><input type="text" class="form-control" placeholder="Address" name="address" #address="ngModel" ngModel required></td>
+            <td>
+                <div *ngIf="address.touched">
+                  <div *ngIf="address.errors?.['required']">
+                    <font color="red"><b>Address is Required*</b></font>
+                  </div>
+                </div>
+              </td>
+           
+
+   
+        </div></tr>
+<tr>
+        <div class="form-group">
+            <td><input type="text" class="form-control" placeholder="User Type" name="userType" #userType="ngModel" ngModel required></td>
+            <td>
+                <div *ngIf="userType.touched">
+                  <div *ngIf="userType.errors?.['required']">
+                    <font color="red"><b>User Type Required*</b></font>
+                  </div>
+                </div>
+              </td>
+           
+
+   
+        </div></tr>
+        <tr>
+        <div class="form-group">
+            <td>
+            <input type="password" class="form-control" placeholder="Password" name="password" #password="ngModel" ngModel required></td>
+            <td>
+                <div *ngIf="password.touched">
+                  <div *ngIf="password.errors?.['required']">
+                    <font color="red"><b>Password Required*</b></font>
+                  </div>
+                </div>
+              </td>
+        </div>
+        </tr>
+        <tr>
+        <td>
+        <input [disabled]="myForm.invalid" class="btn btn-success"
+        (click)="insert(myForm.value)" type="button" class="btn btn-primary btn-block btn-lg" value="Register">
+        </td>
+        </tr>
+        </table>  
+        <div class="px-2">
+            Already You have an Accout..<a routerLink ="/Login">Login Here</a>
+        </div>          
+    </form>        
+    <br>
+    <font color="green"><b>Registered Successfully!!!</b></font>
+</div>
+
+</body>
+</html>

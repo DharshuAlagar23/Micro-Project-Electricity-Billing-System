@@ -1,0 +1,39 @@
+<h1 mat-dialog-title>Add Account Details</h1><br>
+<div mat-dialog-content>
+    <form [formGroup]="billForm" id="billForm">
+    <mat-form-field appearance="outline">
+        <mat-label>Bill No</mat-label>
+        <input formControlName="billNo" name="billNo" matInput placeholder="Bill No">
+    </mat-form-field> 
+    <mat-form-field appearance="outline">
+        <mat-label>Electroboard Id</mat-label>
+        <input formControlName="electroboardId"  name="electroboardId"  matInput placeholder="Electroboard Id">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Amount</mat-label>
+        <input formControlName="amount"  name="amount"  matInput placeholder="Amount ">
+    </mat-form-field>
+   
+    <mat-form-field appearance="outline">
+        <mat-label>Bill Date</mat-label>
+        <input formControlName="billDate" name="billDate"  matInput placeholder="Bill Date">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Bill Status</mat-label>
+        <input formControlName="billStatus" name="billStatus"  matInput placeholder="Bill Status">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Account No</mat-label>
+        <input formControlName="accountNo" name="accountNo"  matInput placeholder="AccountNo">
+    </mat-form-field>
+
+ <div mat-dialog-actions align='end'>
+    <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="insertBill()" name="insert"> {{actionBtn}}</button>
+    <button mat-raised-button color="warn"  mat-dialog-close>Close</button>    
+</div> 
+
+        <button mat-raised-button type="button" [matDialogClose] = "false">Cancel</button>
+
+</form>
